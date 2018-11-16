@@ -7,13 +7,18 @@ import {selectLoginState, selectIsLoginState} from '../store/index';
 import {Observable} from 'rxjs';
 import {interval, timer} from 'rxjs';
 import {delayWhen} from 'rxjs/operators';
+import { PortalState } from '../../portal/store/reducers/portal.reducers';
+import { selectCommentState } from '../../portal/store';
 
 @Component({selector: 'app-login', templateUrl: './login.component.html', styleUrls: ['./login.component.scss']})
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   error$ = null;
   isLogging$ = false;
-  constructor(private fb: FormBuilder, private store: Store < AuthState >) {}
+  constructor(
+    private fb: FormBuilder,
+    private store: Store<AuthState>,
+    private portalStore: Store<PortalState>) {}
 
   ngOnInit() {
     this
@@ -21,6 +26,9 @@ export class LoginComponent implements OnInit {
       .select(selectIsLoginState)
       .subscribe(res => {
         this.isLogging$ = res;
+      });
+      this.portalStore.select(selectCommentState).subscribe(res => {
+        console.log(res);
       });
     this.loginForm = this
       .fb
