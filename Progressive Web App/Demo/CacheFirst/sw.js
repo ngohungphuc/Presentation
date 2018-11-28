@@ -9,7 +9,7 @@ self.addEventListener('fetch', function(event) {
                 return res;
             }
 
-            //clone the request
+            //clone the request since Response objects may be used only once.
             var fetchRequest = event.request.clone();
 
             return fetch(fetchRequest).then(
