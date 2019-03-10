@@ -15,3 +15,7 @@ https://developers.google.com/web/updates/2015/11/app-shell
 https://developers.google.com/web/tools/workbox/
 
 https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
+
+https://developers.google.com/web/ilt/pwa/working-with-indexeddb
+
+https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB
