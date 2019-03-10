@@ -1,0 +1,32 @@
+<ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+    <ngb-panel title="Save Data">
+        <ng-template ngbPanelContent>
+            <button type="button" class="btn btn-primary" (click)="saveData()">Save Data</button>
+        </ng-template>
+    </ngb-panel>
+    <ngb-panel title="Display Data">
+        <ng-template ngbPanelContent>
+            <button type="button" class="btn btn-primary" (click)="getData()">Display Data</button>
+            <br/>
+            <div *ngIf="user" class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Name: {{user?.name}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Email: {{user?.email}}</h6>
+                    <p class="card-text">Description: {{user?.description}}</p>
+                    <p class="card-text">Created: {{user?.created | date}}</p>
+                    <p class="card-text">Id: {{user?.id}}</p>
+                </div>
+            </div>
+        </ng-template>
+    </ngb-panel>
+    <ngb-panel title="Update Data">
+        <ng-template ngbPanelContent>
+            <button type="button" class="btn btn-primary" (click)="updateData(1)">Update Data</button>
+        </ng-template>
+    </ngb-panel>
+    <ngb-panel title="Delete Data">
+        <ng-template ngbPanelContent>
+            <button type="button" class="btn btn-primary" (click)="delete(1)">Delete Data</button>
+        </ng-template>
+    </ngb-panel>
+</ngb-accordion>
