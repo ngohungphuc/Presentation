@@ -129,3 +129,7 @@
 - Angular OnPush Change Detection
 - Introduction to State management
 - Introduction to Ngrx
+
+### 15. Performance & tips
+ - PWA
+ - Service worker
