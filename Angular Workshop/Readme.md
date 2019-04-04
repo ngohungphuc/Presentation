@@ -130,6 +130,7 @@
 - Introduction to State management
 - Introduction to Ngrx
 
-### 15. Performance & tips
+### 15. Advanced
  - PWA
  - Service worker
+ - Performance & tips 
