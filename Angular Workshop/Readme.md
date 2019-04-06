@@ -133,4 +133,6 @@
 ### 15. Advanced
  - PWA
  - Service worker
+ - Notification
  - Performance & tips 
+  
