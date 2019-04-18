@@ -135,4 +135,5 @@
  - Service worker
  - Notification
  - Performance & tips 
-  
+ - App Shell
+ - Universal app (server side render)
