@@ -134,6 +134,7 @@
  - PWA
  - Service worker
  - Notification
- - Performance & tips 
  - App Shell
  - Universal app (server side render)
+ - Build prod code
+ - Performance & tips 
