@@ -1,8 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
-import { RegisterModel } from "../../shared/models/register.model";
 import { ToastrService } from "ngx-toastr";
+
+import { RegisterModel } from "../../shared/models/register.model";
 
 @Component({
   selector: "app-register",
@@ -15,7 +16,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit(formValue: NgForm) {
-    let registerModel: RegisterModel = {
+    const registerModel: RegisterModel = {
       UserName: formValue.value.UserName,
       Password: formValue.value.Password
     };
