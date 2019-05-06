@@ -12,7 +12,10 @@
         required
       />
       <div
-        *ngIf="registerForm.controls.UserName?.errors?.required && registerForm.controls.UserName?.touched"
+        *ngIf="
+          registerForm.controls.UserName?.errors?.required &&
+          registerForm.controls.UserName?.touched
+        "
         class="alert alert-danger"
       >
         UserName is required
@@ -30,7 +33,10 @@
         required
       />
       <div
-        *ngIf="registerForm.controls.Password?.errors?.required && registerForm.controls.Password?.touched"
+        *ngIf="
+          registerForm.controls.Password?.errors?.required &&
+          registerForm.controls.Password?.touched
+        "
         class="alert alert-danger"
       >
         Password is required
@@ -45,4 +51,56 @@
       Submit
     </button>
   </form>
+
+  <!-- <form (ngSubmit)="onSubmit(registerForm)" #registerForm="ngForm">
+    <div class="form-group">
+      <label for="UserName">Your email</label>
+      <input
+        type="text"
+        #UserName="ngModel"
+        ngModel
+        class="form-control"
+        id="UserName"
+        name="UserName"
+        required
+      />
+      <div
+        *ngIf="UserName.invalid && (UserName.dirty || UserName.touched)"
+        class="alert alert-danger"
+      >
+        <div *ngIf="UserName.errors.required">
+          UserName is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Your password</label>
+      <input
+        type="password"
+        #Password="ngModel"
+        ngModel
+        class="form-control"
+        id="Password"
+        name="Password"
+        required
+      />
+      <div
+        *ngIf="Password.invalid && (Password.dirty || Password.touched)"
+        class="alert alert-danger"
+      >
+        <div *ngIf="Password.errors.required">
+          Password is required.
+        </div>
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-success"
+      [disabled]="!registerForm.form.valid"
+    >
+      Submit
+    </button>
+  </form> -->
 </div>
