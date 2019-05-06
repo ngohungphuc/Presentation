@@ -1,9 +1,9 @@
 import { Routes } from "@angular/router";
 
 import { HomeComponent } from "./home/home.component";
-import { RegisterComponent } from "./account/register/register.component";
+import { AccountComponent } from "./account/account/account.component";
+import { AccountModule } from "./account/account.module";
 
 export const routes: Routes = [
-  { path: "", component: HomeComponent, pathMatch: "full" },
-  { path: "register", component: RegisterComponent }
+  { path: "", component: HomeComponent, pathMatch: "full" }
 ];

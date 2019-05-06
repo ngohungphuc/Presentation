@@ -8,7 +8,7 @@ import { RegisterModel } from "../../shared/models/register.model";
 @Component({
   selector: "app-register",
   templateUrl: "./register.component.html",
-  styleUrls: ["./register.component.sass"]
+  styleUrls: ["./register.component.scss"]
 })
 export class RegisterComponent implements OnInit {
   constructor(private http: HttpClient, private toastr: ToastrService) {}
