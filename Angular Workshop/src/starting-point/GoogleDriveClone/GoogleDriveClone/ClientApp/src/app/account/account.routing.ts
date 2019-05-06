@@ -6,7 +6,7 @@ import { LoginComponent } from "./login/login.component";
 
 export const accountRoutes: Routes = [
   {
-    path: "account",
+    path: "",
     component: AccountComponent,
     children: [
       { path: "login", component: LoginComponent },
