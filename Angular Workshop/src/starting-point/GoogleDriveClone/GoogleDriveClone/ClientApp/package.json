@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --aot",
+    "start": "ng serve",
     "build": "ng build --prod --aot --build-optimizer --vendor-chunk=true",
     "build:ssr": "ng run GoogleDriveClone:server:dev",
     "test": "ng test",
