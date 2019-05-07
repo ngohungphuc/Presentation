@@ -18,9 +18,5 @@ namespace GoogleDriveClone.ViewModels
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
-
-        [Required]
-        [Compare("Password", ErrorMessage = "Password and Confirm Password must match")]
-        public string ConfirmPassword { get; set; }
     }
 }

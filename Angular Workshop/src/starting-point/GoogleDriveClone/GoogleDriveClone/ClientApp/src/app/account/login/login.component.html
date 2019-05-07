@@ -1,0 +1,55 @@
+<div class="container">
+  <h1>Login Form</h1>
+  <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+    <div class="form-group">
+      <label for="UserName">Your email</label>
+      <input
+        type="text"
+        class="form-control"
+        id="UserName"
+        name="UserName"
+        required
+        formControlName="UserName"
+      />
+      <div
+        *ngIf="UserName.invalid && (UserName.dirty || UserName.touched)"
+        class="alert alert-danger"
+      >
+        <div *ngIf="UserName.errors.required">
+          Email is required
+        </div>
+
+        <div *ngIf="UserName.errors.whitespace">
+          whitespace is required
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Your password</label>
+      <input
+        type="password"
+        ngModel
+        class="form-control"
+        id="Password"
+        name="Password"
+        required
+        formControlName="Password"
+      />
+      <div
+        *ngIf="Password.invalid && (Password.dirty || Password.touched)"
+        class="alert alert-danger"
+      >
+        <div *ngIf="Password.errors.required">
+          Password is required
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">
+      Submit
+    </button>
+    &nbsp;
+    <button class="btn btn-info" (click)="resetForm()">Reset</button>
+  </form>
+</div>
