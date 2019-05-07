@@ -4,7 +4,7 @@
 
 ## Section 1:
 
-### 1. Introduction
+### ~~ 1. Introduction ~~ 
 
 - Versions of Anguar
 - Language using
@@ -13,7 +13,7 @@
 - What We'll Be Building
 - Overview of Angular
 
-### 2. Introduction to Typescript
+### ~~ 2. Introduction to Typescript ~~
 
 - Installing
 - Compiling TypeScript
@@ -26,7 +26,7 @@
 - Generics
 - Modules
 
-### 3. Getting Started
+### ~~ 3. Getting Started ~~
 
 - Angular CLI, SASS
 - Setting up an Angular Application
@@ -74,7 +74,7 @@
 
 ## Section 2:
 
-### 9. Services and Dependency Injection
+### ~~ 9. Services and Dependency Injection ~~
 
 - Introduction
 - How Does It Work?
@@ -91,7 +91,7 @@
 - Exception Handling
 - Subscribing to an Observable
 
-### 11. Routing
+### ~~ 11. Routing ~~
 
 - Introducing Routing
 - Adding the Routing Module to an App
@@ -104,7 +104,7 @@
 
 ## Section 3:
 
-### 12. Angular Form
+### ~~ 12. Angular Form ~~
 
 - Template-driven forms
 - Template form validators
@@ -113,7 +113,7 @@
 - Validating with FormBuilder
 - Custom validators
 
-### 13. Angular Modules
+### ~~ 13. Angular Modules ~~
 
 - Types of Feature Modules
 - Eager Loading

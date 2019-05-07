@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
     console.warn(this.loginForm.value);
   }
 
-  //TODO: reset form value
   public resetForm() {
     this.loginForm.reset();
   }
