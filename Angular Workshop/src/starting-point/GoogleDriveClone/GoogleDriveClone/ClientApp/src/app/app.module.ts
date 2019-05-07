@@ -7,7 +7,6 @@ import { ToastrModule } from "ngx-toastr";
 import { CommonModule } from "@angular/common";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { AccountModule } from "./account/account.module";
 
 import { AppComponent } from "./app.component";
 import { NavMenuComponent } from "./nav-menu/nav-menu.component";
@@ -16,22 +15,18 @@ import { environment } from "../environments/environment";
 import { routes } from "./app.routing";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavMenuComponent,
-    HomeComponent,
-  ],
+  declarations: [AppComponent, NavMenuComponent, HomeComponent],
   imports: [
     CommonModule,
     BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),
     HttpClientModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { enableTracing: true }),
     ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production
     }),
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    AccountModule
+    //AccountModule
   ],
   providers: [],
   bootstrap: [AppComponent]

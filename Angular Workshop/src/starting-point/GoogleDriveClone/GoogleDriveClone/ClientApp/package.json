@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "serveaot": "ng serve --aot",
     "build": "ng build --prod --aot --build-optimizer --vendor-chunk=true",
     "build:ssr": "ng run GoogleDriveClone:server:dev",
     "test": "ng test",
