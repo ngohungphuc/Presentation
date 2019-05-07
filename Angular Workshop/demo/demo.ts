@@ -12,6 +12,10 @@ class One {
   constructor() {
     this.data1 = 1;
   }
+
+  setSomething() {
+      this.data1 = 2;
+  }
 }
 
 abstract class People {
