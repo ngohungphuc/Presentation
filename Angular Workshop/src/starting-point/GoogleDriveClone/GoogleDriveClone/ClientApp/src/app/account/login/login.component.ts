@@ -32,11 +32,11 @@ export class LoginComponent implements OnInit {
     console.warn(this.loginForm.value);
   }
 
-  //TODO: reset form value 
-  public resetForm(){
-
+  //TODO: reset form value
+  public resetForm() {
+    this.loginForm.reset();
   }
-  
+
   private buildForm() {
     this.loginForm = this.formBuilder.group({
       UserName: ["", Validators.required, this.noWhitespaceValidator],
