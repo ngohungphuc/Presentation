@@ -52,24 +52,24 @@ export class AuthService {
     this.loggedIn$ = this.tokens$.pipe(map(tokens => !!tokens));
   }
 
-  init(): Observable<AuthTokenModel> {
+  public init(): Observable<AuthTokenModel> {
     return this.startupTokenRefresh().pipe(tap(() => this.scheduleRefresh()));
   }
 
-  register(data: AccountModel): Observable<any> {
+  public register(data: AccountModel): Observable<any> {
     return this.http
       .post(`account/register`, data)
       .pipe(catchError(error => throwError(error)));
   }
 
-  login(user: LoginModel): Observable<any> {
+  public login(user: LoginModel): Observable<any> {
     return this.getTokens(user, "password").pipe(
       catchError(error => throwError(error)),
       tap(res => this.scheduleRefresh())
     );
   }
 
-  logout(): void {
+  public logout(): void {
     this.updateState({ profile: null, tokens: null });
     if (this.refreshSubscription$) {
       this.refreshSubscription$.unsubscribe();
@@ -77,7 +77,7 @@ export class AuthService {
     this.removeToken();
   }
 
-  refreshTokens(): Observable<AuthTokenModel> {
+  public refreshTokens(): Observable<AuthTokenModel> {
     return this.state.pipe(
       first(),
       map(state => state.tokens),
@@ -88,6 +88,12 @@ export class AuthService {
         ).pipe(catchError(error => throwError("Session Expired")))
       )
     );
+  }
+
+  public isAuthenticated(): boolean {
+    const tokensString = localStorage.getItem("auth-tokens");
+    console.log(tokensString)
+    return tokensString !== null;
   }
 
   private storeToken(tokens: AuthTokenModel): void {

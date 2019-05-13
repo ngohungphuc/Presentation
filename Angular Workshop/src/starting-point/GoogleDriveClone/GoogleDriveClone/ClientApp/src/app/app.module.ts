@@ -14,6 +14,7 @@ import { NavMenuComponent } from "./nav-menu/nav-menu.component";
 import { HomeComponent } from "./home/home.component";
 import { environment } from "../environments/environment";
 import { routes } from "./app.routing";
+import { AuthGuardService } from "./core/services/portal.guard";
 
 @NgModule({
   declarations: [AppComponent, NavMenuComponent, HomeComponent],
@@ -29,7 +30,7 @@ import { routes } from "./app.routing";
     ToastrModule.forRoot(),
     //AccountModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
