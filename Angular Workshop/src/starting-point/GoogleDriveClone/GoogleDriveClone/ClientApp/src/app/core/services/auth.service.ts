@@ -13,7 +13,7 @@ import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { RefreshGrantModel } from "../models/refresh-grant-model";
 import { ProfileModel } from "../models/profile-model";
 import { AuthStateModel } from "../models/auth-state-model";
-import { RegisterModel } from "../models/register-model";
+import { AccountModel } from "../models/register.model";
 import { LoginModel } from "../models/login-model";
 import { AuthTokenModel } from "../models/auth-token.model";
 
@@ -56,7 +56,7 @@ export class AuthService {
     return this.startupTokenRefresh().pipe(tap(() => this.scheduleRefresh()));
   }
 
-  register(data: RegisterModel): Observable<any> {
+  register(data: AccountModel): Observable<any> {
     return this.http
       .post(`account/register`, data)
       .pipe(catchError(error => throwError(error)));
@@ -130,25 +130,31 @@ export class AuthService {
       scope: "openid offline_access"
     });
 
-    const params = new HttpParams();
-    Object.keys(data).forEach(key => params.set(key, data[key]));
+    let httpParams = new HttpParams();
+    Object.keys(data).forEach(function(key) {
+      httpParams = httpParams.append(key, data[key]);
+    });
 
-    return this.http.post(`connect/token`, params.toString(), httpOptions).pipe(
-      tap(res => {
-        const tokens: AuthTokenModel = res.json();
-        const now = new Date();
-        tokens.expiration_date = new Date(
-          now.getTime() + tokens.expires_in * 1000
-        )
-          .getTime()
-          .toString();
+    console.log(httpParams);
 
-        const profile: ProfileModel = jwtDecode(tokens.id_token);
+    return this.http
+      .post(`connect/token`, httpParams.toString(), httpOptions)
+      .pipe(
+        tap(res => {
+          const tokens: AuthTokenModel = res;
+          const now = new Date();
+          tokens.expiration_date = new Date(
+            now.getTime() + tokens.expires_in * 1000
+          )
+            .getTime()
+            .toString();
 
-        this.storeToken(tokens);
-        this.updateState({ authReady: true, tokens, profile });
-      })
-    );
+          const profile: ProfileModel = jwtDecode(tokens.id_token);
+
+          this.storeToken(tokens);
+          this.updateState({ authReady: true, tokens, profile });
+        })
+      );
   }
 
   private startupTokenRefresh(): Observable<AuthTokenModel> {
