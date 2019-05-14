@@ -3,7 +3,8 @@ import { NgForm } from "@angular/forms";
 import { HttpClient } from "@angular/common/http";
 import { ToastrService } from "ngx-toastr";
 
-import { RegisterModel } from "../../shared/models/register.model";
+import { AccountModel } from "../../core/models/register.model";
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: "app-register",
@@ -11,19 +12,18 @@ import { RegisterModel } from "../../shared/models/register.model";
   styleUrls: ["./register.component.scss"]
 })
 export class RegisterComponent implements OnInit {
-  constructor(private http: HttpClient, private toastr: ToastrService) {}
+  constructor(private authService: AuthService, private toastr: ToastrService) {}
 
   ngOnInit() {}
 
   onSubmit(formValue: NgForm) {
-    const registerModel: RegisterModel = {
+    const registerModel: AccountModel = {
       UserName: formValue.value.UserName,
       Password: formValue.value.Password
     };
 
-    console.log(registerModel);
-    return this.http
-      .post("/Account/Register", registerModel, { observe: "response" })
+    return this.authService
+      .register(registerModel)
       .subscribe(
         res => this.toastr.success("Create account success"),
         error => this.toastr.error("Something went wrong")

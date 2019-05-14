@@ -7,6 +7,10 @@ import {
 } from "@angular/forms";
 import { of } from "rxjs/internal/observable/of";
 
+import { AuthService } from "../../core/services/auth.service";
+import { AccountModel } from '../../core/models/register.model';
+import { LoginModel } from '../../core/models/login-model';
+
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
@@ -14,7 +18,10 @@ import { of } from "rxjs/internal/observable/of";
 })
 export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService
+  ) {}
 
   get UserName() {
     return this.loginForm.get("UserName");
@@ -29,7 +36,14 @@ export class LoginComponent implements OnInit {
   }
 
   public onSubmit() {
-    console.warn(this.loginForm.value);
+    const loginModel: LoginModel = {
+      username: this.loginForm.value.UserName,
+      password: this.loginForm.value.Password
+    };
+
+    this.authService.login(loginModel).subscribe(res => {
+      console.log(res);
+    });
   }
 
   public resetForm() {

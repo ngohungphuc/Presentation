@@ -82,7 +82,7 @@
 - Registering the Service
 - Injecting the Service
 
-### 10. RxJs and HTTP
+### ~~ 10. RxJs and HTTP  ~~
 
 - RxJs: Observables, Operators, Observer
 - Async Pipe

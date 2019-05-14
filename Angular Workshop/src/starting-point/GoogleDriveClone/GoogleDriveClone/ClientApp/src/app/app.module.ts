@@ -7,11 +7,14 @@ import { ToastrModule } from "ngx-toastr";
 import { CommonModule } from "@angular/common";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
+import { AuthService } from "./core/services/auth.service";
+
 import { AppComponent } from "./app.component";
 import { NavMenuComponent } from "./nav-menu/nav-menu.component";
 import { HomeComponent } from "./home/home.component";
 import { environment } from "../environments/environment";
 import { routes } from "./app.routing";
+import { AuthGuardService } from "./core/services/portal.guard";
 
 @NgModule({
   declarations: [AppComponent, NavMenuComponent, HomeComponent],
@@ -27,7 +30,7 @@ import { routes } from "./app.routing";
     ToastrModule.forRoot(),
     //AccountModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
