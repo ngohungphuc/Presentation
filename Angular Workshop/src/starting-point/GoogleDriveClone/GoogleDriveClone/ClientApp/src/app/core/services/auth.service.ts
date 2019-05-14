@@ -26,7 +26,7 @@ export class AuthService {
     tokens: null,
     authReady: false
   };
-  private authReady$ = new BehaviorSubject<boolean>(false);
+
   private state: BehaviorSubject<AuthStateModel>;
   private refreshSubscription$: Subscription;
 
