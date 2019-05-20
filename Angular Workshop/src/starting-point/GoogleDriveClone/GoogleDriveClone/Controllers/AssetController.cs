@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace GoogleDriveClone.Controllers
 {
     [ApiController]
-    [Authorize]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     [Route("api/[controller]/")]
     public class AssetController : Controller
     {
@@ -20,7 +20,6 @@ namespace GoogleDriveClone.Controllers
         }
 
         [HttpGet("GetAll")]
-        [AllowAnonymous]
         public async Task<IActionResult> GetAllAsset()
         {
             var assetList = await _assetService.GetAllAssets();

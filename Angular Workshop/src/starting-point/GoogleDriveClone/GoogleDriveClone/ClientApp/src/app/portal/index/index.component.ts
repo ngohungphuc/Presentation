@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { AuthHttpService } from "../../core/services/auth.http.service";
 
 @Component({
   selector: "portal-index",
@@ -6,5 +7,10 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./index.component.scss"]
 })
 export class IndexComponent implements OnInit {
-  ngOnInit() {}
+  constructor(private authHttpService: AuthHttpService) {}
+  ngOnInit() {
+    this.authHttpService
+      .get("api/asset/GetAll")
+      .subscribe(res => console.log(res));
+  }
 }

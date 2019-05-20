@@ -15,6 +15,7 @@ import { HomeComponent } from "./home/home.component";
 import { environment } from "../environments/environment";
 import { routes } from "./app.routing";
 import { AuthGuardService } from "./core/services/portal.guard";
+import { AuthHttpService } from './core/services/auth.http.service';
 
 @NgModule({
   declarations: [AppComponent, NavMenuComponent, HomeComponent],
@@ -30,7 +31,7 @@ import { AuthGuardService } from "./core/services/portal.guard";
     ToastrModule.forRoot(),
     //AccountModule
   ],
-  providers: [AuthService, AuthGuardService],
+  providers: [AuthService, AuthGuardService, AuthHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
