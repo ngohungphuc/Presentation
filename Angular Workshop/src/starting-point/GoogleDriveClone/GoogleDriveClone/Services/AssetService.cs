@@ -14,9 +14,9 @@ namespace GoogleDriveClone.Services
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task<List<Media>> GetAllAssets()
+        public async Task<List<Asset>> GetAllAssets()
         {
-            var assetList = await _unitOfWork.Repository<Media>().Query().ToListAsync();
+            var assetList = await _unitOfWork.Repository<Asset>().Query().ToListAsync();
 
             return assetList;
         }

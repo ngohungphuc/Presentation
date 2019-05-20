@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace GoogleDriveClone.Models
 {
-    public class Media: BaseEntity
+    public class Asset: BaseEntity
     {
         public string Name { get; set; }
         public string Path { get; set; }
-        public MediaType Type { get; set; }
+        public AssetType Type { get; set; }
         public bool IsDeleted { get; set; }
     }
 }

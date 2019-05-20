@@ -8,6 +8,6 @@ namespace GoogleDriveClone.Services
 {
     public interface IAssetService
     {
-        Task<List<Media>> GetAllAssets();
+        Task<List<Asset>> GetAllAssets();
     }
 }

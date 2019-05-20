@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace GoogleDriveClone.Models
 {
-    public enum MediaType
+    public enum AssetType
     {
         Pdf = 0,
         Word = 2,
