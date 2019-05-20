@@ -5,6 +5,7 @@
         <img [src]="asset.path" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title">{{ asset.name }}</h5>
+          <h6 class="card-title">Upload at : {{ asset.dateCreated | customtime }}</h6>
         </div>
       </div>
     </div>
