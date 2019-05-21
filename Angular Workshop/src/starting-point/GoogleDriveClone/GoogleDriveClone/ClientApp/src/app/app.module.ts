@@ -15,6 +15,8 @@ import { HomeComponent } from "./home/home.component";
 import { environment } from "../environments/environment";
 import { routes } from "./app.routing";
 import { AuthGuardService } from "./core/services/portal.guard";
+import { AuthHttpService } from "./core/services/auth.http.service";
+import { SharedModule } from "./app.shared.module";
 
 @NgModule({
   declarations: [AppComponent, NavMenuComponent, HomeComponent],
@@ -28,9 +30,11 @@ import { AuthGuardService } from "./core/services/portal.guard";
     }),
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    SharedModule
     //AccountModule
   ],
-  providers: [AuthService, AuthGuardService],
+  exports: [],
+  providers: [AuthService, AuthGuardService, AuthHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

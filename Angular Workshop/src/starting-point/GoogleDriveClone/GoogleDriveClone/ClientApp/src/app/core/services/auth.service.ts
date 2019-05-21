@@ -96,6 +96,13 @@ export class AuthService {
     return tokensString !== null;
   }
 
+  public retrieveTokens(): AuthTokenModel {
+    const tokensString = localStorage.getItem("auth-tokens");
+    const tokensModel: AuthTokenModel =
+      tokensString == null ? null : JSON.parse(tokensString);
+    return tokensModel;
+  }
+
   private storeToken(tokens: AuthTokenModel): void {
     const previousTokens = this.retrieveTokens();
     if (previousTokens != null && tokens.refresh_token == null) {
@@ -103,13 +110,6 @@ export class AuthService {
     }
 
     localStorage.setItem("auth-tokens", JSON.stringify(tokens));
-  }
-
-  private retrieveTokens(): AuthTokenModel {
-    const tokensString = localStorage.getItem("auth-tokens");
-    const tokensModel: AuthTokenModel =
-      tokensString == null ? null : JSON.parse(tokensString);
-    return tokensModel;
   }
 
   private removeToken(): void {

@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(navigator.language);
     this.authState$ = this.authService.state$;
     // This starts up the token refresh preocess for the app
     this.authService.init().subscribe(

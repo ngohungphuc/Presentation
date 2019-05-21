@@ -8,8 +8,8 @@ import {
 import { of } from "rxjs/internal/observable/of";
 
 import { AuthService } from "../../core/services/auth.service";
-import { AccountModel } from '../../core/models/register.model';
-import { LoginModel } from '../../core/models/login-model';
+import { LoginModel } from "../../core/models/login-model";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-login",
@@ -20,7 +20,8 @@ export class LoginComponent implements OnInit {
   public loginForm: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {}
 
   get UserName() {
@@ -41,9 +42,12 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.value.Password
     };
 
-    this.authService.login(loginModel).subscribe(res => {
-      console.log(res);
-    });
+    this.authService.login(loginModel).subscribe(
+      res => {
+        this.router.navigate(["portal"]);
+      },
+      err => console.error(err)
+    );
   }
 
   public resetForm() {

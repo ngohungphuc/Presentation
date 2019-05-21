@@ -4,14 +4,16 @@ using GoogleDriveClone.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GoogleDriveClone.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190520154443_InitDb2")]
+    partial class InitDb2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,7 +72,7 @@ namespace GoogleDriveClone.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("GoogleDriveClone.Models.Asset", b =>
+            modelBuilder.Entity("GoogleDriveClone.Models.Media", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -90,13 +92,13 @@ namespace GoogleDriveClone.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Asset");
+                    b.ToTable("Media");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2019, 5, 20, 23, 50, 57, 496, DateTimeKind.Local).AddTicks(5266),
+                            DateCreated = new DateTime(2019, 5, 20, 22, 44, 43, 666, DateTimeKind.Local).AddTicks(2194),
                             DateModified = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsDeleted = false,
                             Name = "angular logo",
