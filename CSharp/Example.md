@@ -94,3 +94,52 @@ Enter third number - 7
 Expected Output:
 Result of specified numbers 5, 6 and 7, (x+y).z is 77 and x.y + y.z is 72
 ```
+
+# OOP 
+## PhotoAlbum
+
+* Create a class "PhotoAlbum" with a private attribute "numberOfPages."
+
+* It should also have a public method "GetNumberOfPages", which will return the number of pages.
+
+* The default constructor will create an album with 16 pages. There will be an additional constructor, with which we can specify the number of pages we want in the album.
+
+* Create a class "BigPhotoAlbum" whose constructor will create an album with 64 pages.
+
+* Create a test class "AlbumTest" to create an album with its default constructor, one with 24 pages, a "BigPhotoAlbum" and show the number of pages that the three albums have.
+
+
+## Classes Student + Teacher
+
+* Create a new project, and include in it the class Person that you just created.
+* Create a class "Student" and another class "Teacher", both descendants of "Person".
+* The class "Student" will have a public method "GoToClasses", which will write on screen "I’m going to class."
+* The class "Teacher" will have a public method "Explain", which will show on screen "Explanation begins". Also, it will have a private attribute "subject", a string.
+* The class Person must have a method "SetAge (int n)" which will indicate the value of their age (eg, 20 years old).
+* The student will have a public method "ShowAge" which will write on the screen "My age is: 20 years old" (or the corresponding number).
+* You must create another test class called "StudentAndTeacherTest" that will contain "Main" and:
+  1. Create a Person and make it say hello
+
+  2. Create a student, set his age to 21, tell him to Greet and display his age
+
+  3. Create a teacher, 30 years old, ask him to say hello and then explain.
+
+
+## Write C# program to 
+Define interface that 2 method:
+```cs
+AccountInfo() //return info;
+Process() //process data;
+```
+Implements the interface just defined
+only need to mock the data no need to implement the code
+
+Then call in the Main()
+
+## Write C# program to 
+This program mock the use case when connect to the database then user do some transaction. Define interface that method:
+```cs
+StartTransaction()
+```
+
+Then implement the interface with the class then call in the Main()
