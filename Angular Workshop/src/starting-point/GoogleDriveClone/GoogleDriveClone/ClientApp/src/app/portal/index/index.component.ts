@@ -16,4 +16,8 @@ export class IndexComponent implements OnInit {
       this.assets = res;
     });
   }
+
+  getData(data) {
+    console.log(data);
+  }
 }

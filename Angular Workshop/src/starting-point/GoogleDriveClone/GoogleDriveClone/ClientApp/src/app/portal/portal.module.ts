@@ -5,9 +5,10 @@ import { RouterModule } from "@angular/router";
 import { IndexComponent } from "./index/index.component";
 import { portalRoutes } from "./portal.routing";
 import { SharedModule } from "../app.shared.module";
+import { ChildComponent } from "./child/child.component";
 
 @NgModule({
-  declarations: [IndexComponent],
+  declarations: [IndexComponent, ChildComponent],
   imports: [CommonModule, RouterModule.forChild(portalRoutes), SharedModule],
   exports: [],
   providers: []

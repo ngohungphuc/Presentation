@@ -1,0 +1,8 @@
+<div class="list-group">
+  <div class="card" *ngFor="let post of posts | async" (click)="navigate(post.id)">
+    <div class="card-body">
+      <h5 class="card-title">userId #{{post.userId}}</h5>
+      <p class="card-text">{{post.title}}</p>
+    </div>
+  </div>
+</div>

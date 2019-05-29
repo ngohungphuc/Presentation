@@ -1,0 +1,8 @@
+<div *ngFor="let asset of assets | async" class="card" style="width: 18rem;">
+  <img [src]="asset.path" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title">{{ asset.name }}</h5>
+    <h6 class="card-title">Upload at : {{ asset.dateCreated | customtime }}</h6>
+    <button (click)="SendData('1', '2')">Send data</button>
+  </div>
+</div>
