@@ -35,7 +35,7 @@
 - Introduction to ES Modules
 - Introduction to Angular Modules
 
-### 4. Introduction to Component
+### ~~ 4. Introduction to Component ~~
 
 - What Is a Component?
 - Creating the Component Class
@@ -44,26 +44,26 @@
 - Bootstrapping Our App Component
 - Dynamic component
 
-### 5. Templates, Interpolation, and Directives
+### ~~ 5. Templates, Interpolation, and Directives ~~ 
 
 - Building a Template
 - Binding with Interpolation
 - Introduction to Directives
 
-### 6. Data Binding and Pipes
+### ~~ 6. Data Binding and Pipes ~~
 
 - Property Binding
 - Handling Events with Event Binding
 - Handling Input with Two-way Binding
 - Transforming Data with Pipes
 
-### 7. Improving Our Components
+### ~~ 7. Improving Our Components ~~
 
 - Strong typing & interfaces
 - Encapsulating styles
 - Lifecycle hooks
 
-### 8. Communicating Between Components
+### ~~ 8. Communicating Between Components ~~
 
 - Smart and dumb components overview
 - Building a Nested Component
