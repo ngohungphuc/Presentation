@@ -43,7 +43,7 @@ namespace SpecflowDemo.Pages
         {
             var dropdown = WebElement.FindElement(_driver, Dropdown, 10);
             var selectElement = new SelectElement(dropdown);
-            return selectElement.SelectedOption.Text;
+            return selectElement.SelectedOption.GetAttribute("value").ToString();
         }
     }
 }

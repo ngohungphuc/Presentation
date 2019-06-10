@@ -91,7 +91,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 9
  testRunner.Then("I can choose options 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 10
- testRunner.And("I should see selected option is Option 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I should see selected option is 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

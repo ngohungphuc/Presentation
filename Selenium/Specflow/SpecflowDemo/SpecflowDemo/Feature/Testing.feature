@@ -7,4 +7,4 @@ Scenario: Click on dropdown
 	And I see the dropdown
 	When I click on dropdown
 	Then I can choose options 2
-	And I should see selected option is Option 2
+	And I should see selected option is 2
