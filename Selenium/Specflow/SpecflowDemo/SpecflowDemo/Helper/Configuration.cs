@@ -27,7 +27,7 @@ namespace SpecflowDemo.Helper
             switch (browserName.ToLowerInvariant())
             {
                 case "chrome":
-                    return new ChromeDriver(@"D:\Chromedriver");
+                    return new ChromeDriver(@"E:\Study\Chromedriver");
 
                 case "edge":
                     return new OpenQA.Selenium.Edge.EdgeDriver();
