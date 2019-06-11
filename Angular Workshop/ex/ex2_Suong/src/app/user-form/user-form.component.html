@@ -1,0 +1,22 @@
+<form (ngSubmit)="HandleSubmit(formUser.value)" #formUser="ngForm" >
+    <div class="form-group">
+        <label for="name">User id</label>
+        <input type="text" [attr.disabled] = "_clickToEdit ? 'disabled' : null" [value]="_userToEdit ? _userToEdit.uid : '' " name="uid" id="uid" class="form-control" placeholder="user id" aria-describedby="helpId"  #regisUID='ngModel' ngModel>
+      </div>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [value]="_userToEdit ? _userToEdit.name : '' " name="name" id="name" class="form-control" placeholder="name" aria-describedby="helpId"  #regisName='ngModel' ngModel>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" [value]="_userToEdit? _userToEdit.email : '' " id="email" class="form-control" placeholder="email" aria-describedby="helpId" #regisEmail='ngModel' ngModel>
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address" [value]="_userToEdit? _userToEdit.address: '' " class="form-control" placeholder="address"
+          aria-describedby="helpId" #regisAddress='ngModel' ngModel>
+      </div>
+      <button type="submit" class="btn btn-success w-100 mt-5" *ngIf="!_clickToEdit">Submit</button>
+      <button type="button" class="btn btn-danger w-100 mt-5" *ngIf="clickToEdit" (click)="SwitchToAdd()">Switch to add user</button>
+
+</form>

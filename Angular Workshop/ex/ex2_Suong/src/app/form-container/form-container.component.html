@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-user-form  [userToEdit]="this.userToEdit" [clickToEdit]="this.userChosen" (emitUser)="SignUp($event)"></app-user-form>
+    </div>
+    <hr>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of Users">
+          <td>{{user.uid}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.address}}</td>
+          <td><button class="btn btn-danger" (click)="PickUser(user)">Pick this user</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
