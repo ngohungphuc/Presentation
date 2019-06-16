@@ -1,8 +1,5 @@
 ﻿using NUnit.Framework;
 using SpecflowDemo.Pages;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using TechTalk.SpecFlow;
 
 namespace SpecflowDemo.Steps
