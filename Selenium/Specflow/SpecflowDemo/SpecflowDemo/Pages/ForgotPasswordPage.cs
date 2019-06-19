@@ -6,7 +6,7 @@ using System.Text;
 
 namespace SpecflowDemo.Pages
 {
-    class ForgotPasswordPage : BaseConfig
+    public class ForgotPasswordPage : BaseConfig
     {
         public ForgotPasswordPage()
         {

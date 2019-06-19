@@ -10,30 +10,35 @@ namespace SpecflowDemo.Steps
     [Binding]
     public class ForgotPasswordStep
     {
-        private ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
+        private readonly ForgotPasswordPage _forgotPasswordPage;
+
+        public ForgotPasswordStep(ForgotPasswordPage forgotPasswordPage)
+        {
+            _forgotPasswordPage = forgotPasswordPage ?? throw new ArgumentNullException(nameof(forgotPasswordPage));
+        }
 
         [Given(@"navigate to forgot password page")]
         public void GivenNavigateToForgotPasswordPage()
         {
-            forgotPasswordPage.NavigateToForgotPassPage();
+            _forgotPasswordPage.NavigateToForgotPassPage();
         }
 
         [Given(@"I enter my registered email that have value ""(.*)""")]
         public void GivenIEnterMyRegisteredEmailThatHaveValue(string email)
         {
-            forgotPasswordPage.InputEmail(email);
+            _forgotPasswordPage.InputEmail(email);
         }
 
         [When(@"I click retrieve password")]
         public void WhenIClickRetrievePassword()
         {
-            forgotPasswordPage.ClickSubmit();
+            _forgotPasswordPage.ClickSubmit();
         }
 
         [Then(@"I should see message ""(.*)""")]
         public void ThenIShouldSeeMessage(string p0)
         {
-            var message = forgotPasswordPage.GetSuccessText();
+            var message = _forgotPasswordPage.GetSuccessText();
             Assert.AreEqual("Your e-mail's been sent!", message);
         }
     }
