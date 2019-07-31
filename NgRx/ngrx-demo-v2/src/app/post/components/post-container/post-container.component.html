@@ -1,15 +1,3 @@
 <div class="container">
-  <div class="row">
-    <div class="col-3" *ngFor="let post of posts$ | async">
-      <div class="card card-container">
-        <div class="card-body">
-          <h5 class="card-title">{{ post.title }}</h5>
-          <p class="card-text">{{ post.body }}</p>
-          <button type="button" class="btn btn-outline-primary">
-            Go to detail
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <app-post [posts]="posts$ | async" (goToDetailEvent)="goToDetail($event)"></app-post>
 </div>

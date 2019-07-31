@@ -10,11 +10,13 @@ import { PostService } from "./store/services/post.service";
 import { PostEffects } from "./store/effects/post.effects";
 import { POST_FEATURE } from "../core/models/store.key.model";
 
-import { PostContainerComponent } from "./components/post-container/post-container.component";
 import { postRoutes } from "./post.routing";
+import { PostContainerComponent } from "./components/post-container/post-container.component";
+import { PostDetailComponent } from "./components/post-detail/post-detail.component";
+import { PostComponent } from "./components/post/post.component";
 
 @NgModule({
-  declarations: [PostContainerComponent],
+  declarations: [PostContainerComponent, PostDetailComponent, PostComponent],
   providers: [PostService],
   imports: [
     CommonModule,

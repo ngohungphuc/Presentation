@@ -11,3 +11,14 @@ export const selectAllPosts = createSelector(
   selectPostState,
   selectAll
 );
+
+export const selectedPost = createSelector(
+  selectPostState,
+  state => state.selectedPost
+);
+
+export const selectedPostById = (id: number) =>
+  createSelector(
+    selectPostState,
+    state => state.entities[id]
+  );

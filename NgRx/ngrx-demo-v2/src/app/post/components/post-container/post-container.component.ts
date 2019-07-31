@@ -3,7 +3,7 @@ import { Store, select } from "@ngrx/store";
 import { Observable } from "rxjs";
 
 import { PostState } from "../../store/reducers/post.reducer";
-import { LoadPosts } from "../../store/actions/post.actions";
+import { LoadPosts, LoadPost } from "../../store/actions/post.actions";
 import { IPost } from "../../store/models/post.model";
 import { selectAllPosts } from "../../store/selectors/post.selector";
 
@@ -19,5 +19,9 @@ export class PostContainerComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(LoadPosts());
     this.posts$ = this.store.pipe(select(selectAllPosts));
+  }
+
+  goToDetail(postId: number) {
+    this.store.dispatch(LoadPost({ postId }));
   }
 }

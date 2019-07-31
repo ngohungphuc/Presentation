@@ -1,0 +1,14 @@
+<div class="container" *ngIf="selectedPost$ | async">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card" style="margin-top: 100px;">
+        <div class="card-body">
+          <h5 class="card-title">{{ (selectedPost$ | async)?.title }}</h5>
+          <p class="card-text">
+            {{ (selectedPost$ | async)?.body }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
