@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ngrx-demo-v2"
+    }
+  },
+  "defaultProject": "ngrx-demo-v2",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
