@@ -15,7 +15,7 @@ var array = [
 ];
 
 var map = new Map(); //Empty Map
-var map = new Map([[1,2],[2,3]]); // map = {1=>2, 2=>3}
+var map = new Map([[1,2],[2,3]]); // map = {1=>2, 2=>3} , map.get(1) => 2
 
 var map = {
   1: {
