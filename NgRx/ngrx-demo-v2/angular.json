@@ -6,8 +6,8 @@
     "ngrx-demo-v2": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
+        "@ngrx/schematics:component": {
+          "styleext": "scss"
         }
       },
       "root": "",
