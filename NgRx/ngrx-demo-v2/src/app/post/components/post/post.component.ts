@@ -10,12 +10,8 @@ import { IPost } from "../../store/models/post.model";
 })
 export class PostComponent implements OnInit {
   @Input() posts: Observable<IPost[]>;
-  @Output() goToDetailEvent: EventEmitter<number> = new EventEmitter<number>();
+
   constructor() {}
 
   ngOnInit() {}
-
-  goToDetail(postId: number) {
-    this.goToDetailEvent.emit(postId);
-  }
 }

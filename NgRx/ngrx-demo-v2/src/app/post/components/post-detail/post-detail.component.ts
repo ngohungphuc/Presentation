@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs";
 import { Store, select } from "@ngrx/store";
+import { Observable } from "rxjs";
 
 import { IPost } from "../../store/models/post.model";
 import { PostState } from "../../store/reducers/post.reducer";
-import { selectedPost } from "../../store/selectors/post.selector";
+import { getPostById } from "../../../core/selectors/router.selector";
 
 @Component({
   selector: "app-post-detail",
@@ -12,10 +12,11 @@ import { selectedPost } from "../../store/selectors/post.selector";
   styleUrls: ["./post-detail.component.scss"]
 })
 export class PostDetailComponent implements OnInit {
-  public selectedPost$: Observable<IPost>;
+  public post$: Observable<IPost>;
+
   constructor(private store: Store<PostState>) {}
 
   ngOnInit() {
-    this.selectedPost$ = this.store.pipe(select(selectedPost));
+    this.post$ = this.store.pipe(select(getPostById));
   }
 }

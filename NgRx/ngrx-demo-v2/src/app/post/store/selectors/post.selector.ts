@@ -7,9 +7,14 @@ export const selectPostState = createFeatureSelector<PostState>(
   POST_FEATURE.storekey
 );
 
-export const selectAllPosts = createSelector(
+export const selectPostsEntities = createSelector(
   selectPostState,
-  selectAll
+  posts => posts.entities //object look up
+);
+
+export const selectAllPosts = createSelector(
+  selectPostsEntities,
+  posts => Object.keys(posts).map(key => posts[key]) // use *ngFor
 );
 
 export const selectedPost = createSelector(

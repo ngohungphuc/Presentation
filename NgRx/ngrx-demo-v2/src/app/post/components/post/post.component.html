@@ -4,9 +4,12 @@
       <div class="card-body">
         <h5 class="card-title">{{ post.title }}</h5>
         <p class="card-text">{{ post.body }}</p>
-        <button type="button" class="btn btn-outline-primary" (click)="goToDetail(post.id)">
-          Go to detail
-        </button>
+        <a
+          class="btn btn-outline-primary"
+          [routerLink]="['/posts/',post.id]"
+          role="button"
+          >Go to detail</a
+        >
       </div>
     </div>
   </div>

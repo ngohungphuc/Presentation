@@ -4,6 +4,7 @@ import { StoreModule } from "@ngrx/store";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { RouterModule } from "@angular/router";
 import { EffectsModule } from "@ngrx/effects";
+import { StoreRouterConnectingModule } from "@ngrx/router-store";
 
 import { AppComponent } from "./app.component";
 import { ROOT_REDUCERS, metaReducers } from "./core/reducers";
@@ -15,6 +16,7 @@ import { appRoutes } from "./app.routing";
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
+    StoreRouterConnectingModule.forRoot(),
     StoreModule.forRoot(ROOT_REDUCERS, {
       metaReducers,
       runtimeChecks: {
