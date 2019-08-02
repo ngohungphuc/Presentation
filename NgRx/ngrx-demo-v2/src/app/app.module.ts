@@ -10,10 +10,9 @@ import { AppComponent } from "./app.component";
 import { ROOT_REDUCERS, metaReducers } from "./core/reducers";
 import { environment } from "../environments/environment";
 import { appRoutes } from "./app.routing";
-import { TestComponent } from './test/test.component';
 
 @NgModule({
-  declarations: [AppComponent, TestComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
