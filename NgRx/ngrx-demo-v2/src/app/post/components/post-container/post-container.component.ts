@@ -22,4 +22,8 @@ export class PostContainerComponent implements OnInit {
     this.store.dispatch(LoadPosts());
     this.posts$ = this.store.pipe(select(selectAllPosts));
   }
+
+  goToDetail(postId: number) {
+    this.store.dispatch(LoadPost({ postId }));
+  }
 }

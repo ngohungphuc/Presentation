@@ -8,8 +8,13 @@
           class="btn btn-outline-primary"
           [routerLink]="['/posts/',post.id]"
           role="button"
-          >Go to detail</a
+          >Go to detail with id</a
         >
+        <br/>
+        <br/>
+        <button type="button" class="btn btn-outline-primary" (click)="goToDetail(post.id)">
+          Go to detail without id
+        </button>
       </div>
     </div>
   </div>

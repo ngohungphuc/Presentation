@@ -1,4 +1,6 @@
 import { createAction, props } from "@ngrx/store";
+import { Update } from "@ngrx/entity";
+
 import { IPost } from "../models/post.model";
 
 export enum PostActionTypes {
@@ -7,7 +9,10 @@ export enum PostActionTypes {
   LoadPostsFail = "[Post] Load Posts Fail",
   LoadPost = "[Post] Load Post",
   LoadPostSuccess = "[Post] Load Post Success",
-  LoadPostFail = "[Post] Load Post Fail"
+  LoadPostFail = "[Post] Load Post Fail",
+  UpdatePost = "[Post] Update Post",
+  UpdatePostFail = "[Post] Update Post Fail",
+  UpdateSelectedPost = "[Post] Update Selected Post"
 }
 
 export const LoadPosts = createAction(PostActionTypes.LoadPosts);
@@ -30,5 +35,18 @@ export const LoadPostSuccess = createAction(
 );
 export const LoadPostFail = createAction(
   PostActionTypes.LoadPostFail,
+  props<{ errors: any }>()
+);
+
+export const UpdatePost = createAction(
+  PostActionTypes.UpdatePost,
+  props<{ post: Update<IPost> }>()
+);
+export const UpdateSelectedPost = createAction(
+  PostActionTypes.UpdateSelectedPost,
+  props<{ selectedPost: IPost }>()
+);
+export const UpdatePostFail = createAction(
+  PostActionTypes.UpdatePostFail,
   props<{ errors: any }>()
 );
