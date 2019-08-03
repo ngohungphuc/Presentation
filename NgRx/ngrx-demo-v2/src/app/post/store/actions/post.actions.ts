@@ -50,3 +50,12 @@ export const UpdatePostFail = createAction(
   PostActionTypes.UpdatePostFail,
   props<{ errors: any }>()
 );
+
+// Invalid: action type doesn't follow the "[Source] Event" convention
+//const loadCustomers = createAction('Load Customers')
+
+/* const loadCustomers = createAction("[Customers Page] Load Customers");
+const createCustomer = createAction(
+  "[Customers Page] Load Customers",
+  props<{ customer: Customer }>()
+); */
