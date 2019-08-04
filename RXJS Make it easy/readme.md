@@ -32,7 +32,6 @@
 * zip
 * groupBy
 * subscribeOn
-* throttleTime
 * timestamp
 * auditTime
 * race
@@ -40,3 +39,7 @@
 * min
 * max
 * endWith
+
+Subject demo :
+* https://stackblitz.com/edit/rxjs-nzyehv?devtoolsheight=60
+* https://stackblitz.com/edit/rxjs-subjects-comparison?file=index.ts&devtoolsheight=100
