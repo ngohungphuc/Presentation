@@ -1,0 +1,42 @@
+# Common operators
+* skip
+* skipUntil
+* skipWhile
+* take
+* takeWhile
+* tap
+* reduce
+* pipe
+* of
+* debounce
+* debounceTime
+* withLatestFrom
+* map
+* switchMap
+* exhaustMap
+* mergeMap
+* concatMap
+* mapTo
+* filter
+* forkJoin
+* fromEvent
+* distinctUntilChanged
+* throttle
+* throttleTime
+
+# Advance operators
+* startWith
+* pluck
+* pairwise
+* retryWhen
+* zip
+* groupBy
+* subscribeOn
+* throttleTime
+* timestamp
+* auditTime
+* race
+* ignoreElements
+* min
+* max
+* endWith
