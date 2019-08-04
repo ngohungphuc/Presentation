@@ -23,6 +23,7 @@
 * distinctUntilChanged
 * throttle
 * throttleTime
+* delay
 
 # Advance operators
 * startWith
