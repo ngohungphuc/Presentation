@@ -124,7 +124,48 @@
     const subscribe = source.subscribe(val => console.log(val));
   ```
 * debounce
+  > Discard emitted values that take less than the specified time, based on selector function, between output.
+  ```ts
+    // RxJS v6+
+  import { of, timer } from 'rxjs';
+  import { debounce } from 'rxjs/operators';
+
+  //emit four strings
+  const example = of('WAIT', 'ONE', 'SECOND', 'Last will display');
+  /*
+      Only emit values after a second has passed between the last emission,
+      throw away all other values
+  */
+  const debouncedExample = example.pipe(debounce(() => timer(1000)));
+  /*
+      In this example, all values but the last will be omitted
+      output: 'Last will display'
+  */
+  const subscribe = debouncedExample.subscribe(val => console.log(val));
+
+  ```
 * debounceTime
+  > Discard emitted values that take less than the specified time between output
+  ```ts
+  // RxJS v6+
+  import { fromEvent } from 'rxjs';
+  import { debounceTime, map } from 'rxjs/operators';
+
+  // elem ref
+  const searchBox = document.getElementById('search');
+
+  // streams
+  const keyup$ = fromEvent(searchBox, 'keyup');
+
+  // wait .5s between keyups to emit current value
+  keyup$
+    .pipe(
+      map((i: any) => i.currentTarget.value),
+      debounceTime(500)
+    )
+    .subscribe(console.log);
+
+  ```
 * withLatestFrom
   > Provide the last value from another observable.
 * map
@@ -183,7 +224,33 @@
     .subscribe(console.log);
   ```
 * throttle
+  > Emit value on the leading edge of an interval, but suppress new values until durationSelector has completed.
+  ```ts
+  import { interval } from 'rxjs';
+  import { throttle } from 'rxjs/operators';
+
+  //emit value every 1 second
+  const source = interval(1000);
+  //throttle for 2 seconds, emit latest value
+  const example = source.pipe(throttle(val => interval(2000)));
+  //output: 0...3...6...9
+  const subscribe = example.subscribe(val => console.log(val));
+  ```
 * throttleTime
+  ```ts
+  import { interval } from 'rxjs';
+  import { throttleTime } from 'rxjs/operators';
+
+  //emit value every 1 second
+  const source = interval(1000);
+  /*
+    throttle for five seconds
+    last value emitted before throttle ends will be emitted from source
+  */
+  const example = source.pipe(throttleTime(5000));
+  //output: 0...6...12
+  const subscribe = example.subscribe(val => console.log(val));
+  ```
 * delay
   > Delay emitted values by given time.
   ```ts
