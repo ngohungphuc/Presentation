@@ -1,5 +1,6 @@
 # Angular Workshop
 
+## [Slide](https://docs.google.com/presentation/d/1YBhHooDfHkZMiWp2fn4poJ5k4276mph9r8XxBgiz_EQ/edit?usp=sharing)
 ## Topic Outlines:
 
 1. Introduction 
@@ -12,11 +13,11 @@
 2. Introduction to Typescript 
 - Installing
 - Compiling TypeScript
-- Introduction to let, const
-- Arrow Functions
-- Static Typing
-- Classes
-- Interfaces
+- Introduction to var, let, const, readonly
+- Types in TS
+- Other types
+- Static and Dynamic Typing
+- Class, Type and Interface
 - Generics
 - Modules
 - Operators (Spread, nullish...)

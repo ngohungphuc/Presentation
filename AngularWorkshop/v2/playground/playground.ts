@@ -128,3 +128,21 @@ let a, b, rest;
 console.log(rest);
 // expected output: Array [30,40,50]
 
+function firstElement<Type>(arr: Type[]): Type {
+  return arr[0];
+}
+
+// s is of type 'string'
+const s = firstElement(["a", "b", "c"]);
+// n is of type 'number'
+const n = firstElement([1, 2, 3]);
+
+
+function getArray<T>(items : T[] ) : T[] {
+  return new Array<T>().concat(items);
+}
+
+let myNumArr = getArray<number>([100, 200, 300]);
+let myStrArr = getArray<string>(["Hello", "World"]);
+
+myNumArr.push(400); // OK
