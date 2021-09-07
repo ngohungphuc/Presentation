@@ -74,6 +74,7 @@
 - Async Pipe
 - Using Http in Angular
 - Sending an HTTP Request
+- HttpInterceptors
 - Exception Handling
 - Subscribing to an Observable
 
