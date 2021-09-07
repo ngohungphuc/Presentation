@@ -82,11 +82,11 @@
 - Introducing Routing
 - Adding the Routing Module to an App
 - Adding Routing to Templates
+- Child Routes
 - Sending and Receiving Route Parameters
 - Subscribing to Route Parameters
 - Different types Route Guards
 - Applying Route Guards
-- Child Routes
 
 12. Angular Form
 - Template-driven forms
