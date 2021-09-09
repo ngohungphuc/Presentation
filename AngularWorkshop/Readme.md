@@ -98,8 +98,7 @@
 
 13. Angular Modules 
 - Types of Feature Modules
-- Eager Loading
-- Lazy Loading
+- Eager Loading, Lazy Loading, Pre-Loading
 - Defining Preload Strategies
 - Feature Module Types
 - Identifying Feature Modules
