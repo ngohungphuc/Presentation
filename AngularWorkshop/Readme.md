@@ -107,7 +107,6 @@
 14. Change Detection & State management
 - Introduction to Change Detection
 - Angular OnPush Change Detection
-- Introduction to State management
 - Introduction to Ngrx
 
 15. Advanced and performance tips
